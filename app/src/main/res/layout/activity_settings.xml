@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/padding"
+        tools:context=".SettingsActivity">
+
+    <TextView
+            android:id="@+id/maxSetsText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:textSize="@dimen/large"
+            android:layout_marginVertical="@dimen/small"
+            android:text="Maximum Sets:"/>
+
+    <EditText
+            android:id="@+id/maxSets"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/maxSetsText"
+            android:textSize="@dimen/large"
+            android:textAlignment="center"
+            android:inputType="number"
+            android:layout_marginVertical="@dimen/small"
+            android:text="@string/max_sets"/>
+
+    <TextView
+            android:id="@+id/maxScoreText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/maxSets"
+            android:textSize="@dimen/large"
+            android:layout_marginVertical="@dimen/small"
+            android:text="Maximum Score:"/>
+
+
+    <EditText
+            android:id="@+id/maxScore"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/maxScoreText"
+            android:textSize="@dimen/large"
+            android:textAlignment="center"
+            android:inputType="number"
+            android:layout_marginVertical="@dimen/small"
+            android:text="@string/max_score"/>
+
+    <Button android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_below="@id/maxScore"
+            android:background="@color/colorAccent"
+            android:layout_marginVertical="@dimen/small"
+            android:textSize="@dimen/large"
+            android:onClick="changeSettings"
+            android:text="OK"/>
+
+</RelativeLayout>

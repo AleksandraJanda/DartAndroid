@@ -1,0 +1,448 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        android:padding="@dimen/padding"
+        tools:context=".GameActivity"
+        android:baselineAligned="false">
+
+    <LinearLayout
+            android:id="@+id/left"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+        <LinearLayout
+                android:id="@+id/scoreboardText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="4"
+                android:orientation="horizontal">
+
+            <TextView
+                    android:id="@+id/playerNameText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/small"
+                    android:layout_weight="1"
+                    android:text="Player:"
+                    android:textSize="@dimen/medium"/>
+
+            <TextView
+                    android:id="@+id/playerSetsText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/small"
+                    android:layout_weight="1"
+                    android:text="Sets:"
+                    android:textSize="@dimen/medium"/>
+
+            <TextView
+                    android:id="@+id/playerLegsText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/small"
+                    android:layout_weight="1"
+                    android:text="Legs:"
+                    android:textSize="@dimen/medium"/>
+
+            <TextView
+                    android:id="@+id/playerScoreText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/small"
+                    android:layout_weight="1"
+                    android:text="Score:"
+                    android:textSize="@dimen/medium"/>
+
+        </LinearLayout>
+
+        <ListView
+                android:id="@+id/scoreboard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+    <RelativeLayout
+            android:id="@+id/right"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+        <GridLayout
+                android:id="@+id/numbers"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                android:layout_above="@id/countSection"
+                android:columnCount="6"
+                android:orientation="horizontal">
+
+            <Button
+                    android:id="@+id/number1"
+                    android:minWidth="0dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/mini"
+                    android:layout_marginEnd="@dimen/mini"
+                    android:layout_gravity="fill_horizontal" android:onClick="addNumber"
+                    android:textSize="@dimen/medium"
+                    android:text="1"/>
+
+            <Button
+                    android:id="@+id/number2"
+                    android:minWidth="0dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/mini"
+                    android:layout_marginEnd="@dimen/mini"
+                    android:layout_gravity="fill_horizontal"
+                    android:onClick="addNumber"
+                    android:textSize="@dimen/medium"
+                    android:text="2"/>
+
+            <Button
+                    android:id="@+id/number3"
+                    android:minWidth="0dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/mini"
+                    android:layout_marginEnd="@dimen/mini"
+                    android:layout_gravity="fill_horizontal"
+                    android:onClick="addNumber"
+                    android:textSize="@dimen/medium"
+                    android:text="3"/>
+
+            <Button
+                    android:id="@+id/number4"
+                    android:minWidth="0dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/mini"
+                    android:layout_marginEnd="@dimen/mini"
+                    android:layout_gravity="fill_horizontal"
+                    android:onClick="addNumber"
+                    android:textSize="@dimen/medium"
+                    android:text="4"/>
+
+            <Button
+                    android:id="@+id/number5"
+                    android:minWidth="0dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/mini"
+                    android:layout_marginEnd="@dimen/mini"
+                    android:layout_gravity="fill_horizontal"
+                    android:onClick="addNumber"
+                    android:textSize="@dimen/medium"
+                    android:text="5"/>
+
+            <Button
+                    android:id="@+id/clear"
+                    android:minWidth="0dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/mini"
+                    android:layout_marginEnd="@dimen/mini"
+                    android:layout_gravity="fill_horizontal"
+                    android:onClick="resetEquation"
+                    android:textSize="@dimen/medium"
+                    android:text="C"/>
+
+            <Button
+                    android:id="@+id/number6"
+                    android:minWidth="0dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/mini"
+                    android:layout_marginEnd="@dimen/mini"
+                    android:layout_gravity="fill_horizontal"
+                    android:onClick="addNumber"
+                    android:textSize="@dimen/medium"
+                    android:text="6"/>
+
+            <Button
+                    android:id="@+id/number7"
+                    android:minWidth="0dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/mini"
+                    android:layout_marginEnd="@dimen/mini"
+                    android:layout_gravity="fill_horizontal"
+                    android:onClick="addNumber"
+                    android:textSize="@dimen/medium"
+                    android:text="7"/>
+
+            <Button
+                    android:id="@+id/number8"
+                    android:minWidth="0dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/mini"
+                    android:layout_marginEnd="@dimen/mini"
+                    android:layout_gravity="fill_horizontal"
+                    android:onClick="addNumber"
+                    android:textSize="@dimen/medium"
+                    android:text="8"/>
+
+            <Button
+                    android:id="@+id/number9"
+                    android:minWidth="0dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/mini"
+                    android:layout_marginEnd="@dimen/mini"
+                    android:layout_gravity="fill_horizontal"
+                    android:onClick="addNumber"
+                    android:textSize="@dimen/medium"
+                    android:text="9"/>
+
+            <Button
+                    android:id="@+id/number10"
+                    android:minWidth="0dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/mini"
+                    android:layout_marginEnd="@dimen/mini"
+                    android:layout_gravity="fill_horizontal"
+                    android:onClick="addNumber"
+                    android:textSize="@dimen/medium"
+                    android:text="10"/>
+
+            <Button
+                    android:id="@+id/undo"
+                    android:minWidth="0dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/mini"
+                    android:layout_marginEnd="@dimen/mini"
+                    android:layout_gravity="fill_horizontal"
+                    android:onClick="undoNumber"
+                    android:textSize="@dimen/medium"
+                    android:text="U"/>
+
+            <Button
+                    android:id="@+id/number11"
+                    android:minWidth="0dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/mini"
+                    android:layout_marginEnd="@dimen/mini"
+                    android:layout_gravity="fill_horizontal"
+                    android:onClick="addNumber"
+                    android:textSize="@dimen/medium"
+                    android:text="11"/>
+
+            <Button
+                    android:id="@+id/number12"
+                    android:minWidth="0dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/mini"
+                    android:layout_marginEnd="@dimen/mini"
+                    android:layout_gravity="fill_horizontal"
+                    android:onClick="addNumber"
+                    android:textSize="@dimen/medium"
+                    android:text="12"/>
+
+            <Button
+                    android:id="@+id/number13"
+                    android:minWidth="0dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/mini"
+                    android:layout_marginEnd="@dimen/mini"
+                    android:layout_gravity="fill_horizontal"
+                    android:onClick="addNumber"
+                    android:textSize="@dimen/medium"
+                    android:text="13"/>
+
+            <Button
+                    android:id="@+id/number14"
+                    android:minWidth="0dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/mini"
+                    android:layout_marginEnd="@dimen/mini"
+                    android:layout_gravity="fill_horizontal"
+                    android:onClick="addNumber"
+                    android:textSize="@dimen/medium"
+                    android:text="14"/>
+
+            <Button
+                    android:id="@+id/number15"
+                    android:minWidth="0dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/mini"
+                    android:layout_marginEnd="@dimen/mini"
+                    android:layout_gravity="fill_horizontal"
+                    android:onClick="addNumber"
+                    android:textSize="@dimen/medium"
+                    android:text="15"/>
+
+            <Switch
+                    android:id="@+id/doubleNumber"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/mini"
+                    android:layout_marginEnd="@dimen/mini"
+                    android:layout_gravity="fill_horizontal"
+                    android:onClick="onDouble"
+                    android:textSize="@dimen/medium"
+                    android:padding="@dimen/padding"
+                    android:layout_weight="1"
+                    android:text="2x"/>
+
+            <Button
+                    android:id="@+id/number16"
+                    android:minWidth="0dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/mini"
+                    android:layout_marginEnd="@dimen/mini"
+                    android:layout_gravity="fill_horizontal"
+                    android:onClick="addNumber"
+                    android:textSize="@dimen/medium"
+                    android:text="16"/>
+
+            <Button
+                    android:id="@+id/number17"
+                    android:minWidth="0dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/mini"
+                    android:layout_marginEnd="@dimen/mini"
+                    android:layout_gravity="fill_horizontal"
+                    android:onClick="addNumber"
+                    android:textSize="@dimen/medium"
+                    android:text="17"/>
+
+            <Button
+                    android:id="@+id/number18"
+                    android:minWidth="0dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/mini"
+                    android:layout_marginEnd="@dimen/mini"
+                    android:layout_gravity="fill_horizontal"
+                    android:onClick="addNumber"
+                    android:textSize="@dimen/medium"
+                    android:text="18"/>
+
+            <Button
+                    android:id="@+id/number19"
+                    android:minWidth="0dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/mini"
+                    android:layout_marginEnd="@dimen/mini"
+                    android:layout_gravity="fill_horizontal"
+                    android:onClick="addNumber"
+                    android:textSize="@dimen/medium"
+                    android:text="19"/>
+
+            <Button
+                    android:id="@+id/number20"
+                    android:minWidth="0dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/mini"
+                    android:layout_marginEnd="@dimen/mini"
+                    android:layout_gravity="fill_horizontal"
+                    android:onClick="addNumber"
+                    android:textSize="@dimen/medium"
+                    android:text="20"/>
+
+            <Switch
+                    android:id="@+id/tripleNumber"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/mini"
+                    android:layout_marginEnd="@dimen/mini"
+                    android:layout_marginTop="0dp"
+                    android:layout_gravity="fill_horizontal"
+                    android:onClick="onTriple"
+                    android:textSize="@dimen/medium"
+                    android:padding="@dimen/padding"
+                    android:layout_weight="1"
+                    android:text="3x"/>
+
+            <Button
+                    android:id="@+id/number25"
+                    android:minWidth="0dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/mini"
+                    android:layout_marginEnd="@dimen/mini"
+                    android:layout_gravity="fill_horizontal"
+                    android:onClick="addNumber"
+                    android:textSize="@dimen/medium"
+                    android:text="25"/>
+
+            <Button
+                    android:id="@+id/number50"
+                    android:minWidth="0dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/mini"
+                    android:layout_marginEnd="@dimen/mini"
+                    android:layout_gravity="fill_horizontal"
+                    android:onClick="addNumber"
+                    android:textSize="@dimen/medium"
+                    android:text="50"/>
+
+        </GridLayout>
+
+        <LinearLayout
+                android:id="@+id/countSection"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="2"
+                android:layout_alignParentBottom="true"
+                android:orientation="horizontal">
+
+            <EditText
+                    android:id="@+id/points"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:inputType="number"
+                    android:enabled="false"
+                    android:textColor="@color/black"
+                    android:layout_weight="1"
+                    android:textSize="@dimen/large"
+                    android:text="@string/equation"/>
+
+            <Button
+                    android:id="@+id/minusPoints"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorAccent"
+                    android:onClick="onCount"
+                    android:textSize="@dimen/medium"
+                    android:layout_weight="1"
+                    android:text="COUNT"/>
+        </LinearLayout>
+
+        <Button
+                android:id="@+id/newGame"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/colorPrimary"
+                android:text="NEW GAME"
+                android:textColor="@color/white"
+                android:onClick="onNewGame"
+                android:textSize="@dimen/large"
+                android:visibility="invisible"/>
+
+    </RelativeLayout>
+
+</LinearLayout>
