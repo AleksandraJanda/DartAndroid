@@ -8,7 +8,8 @@
         android:weightSum="2"
         android:padding="@dimen/padding"
         tools:context=".GameActivity"
-        android:baselineAligned="false">
+        android:baselineAligned="false"
+        android:keepScreenOn="true">
 
     <LinearLayout
             android:id="@+id/left"
@@ -21,7 +22,7 @@
                 android:id="@+id/scoreboardText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:weightSum="4"
+                android:weightSum="5"
                 android:orientation="horizontal">
 
             <TextView
@@ -58,6 +59,15 @@
                     android:layout_marginBottom="@dimen/small"
                     android:layout_weight="1"
                     android:text="Score:"
+                    android:textSize="@dimen/medium"/>
+
+            <TextView
+                    android:id="@+id/playerAvgText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/small"
+                    android:layout_weight="1"
+                    android:text="Avg:  "
                     android:textSize="@dimen/medium"/>
 
         </LinearLayout>
@@ -398,6 +408,24 @@
                     android:onClick="addNumber"
                     android:textSize="@dimen/medium"
                     android:text="50"/>
+
+            <Space/>
+            <Space/>
+            <Space/>
+
+            <Button
+                    android:id="@+id/check"
+                    android:minWidth="0dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/mini"
+                    android:layout_marginEnd="@dimen/mini"
+                    android:layout_gravity="fill_horizontal"
+                    android:onClick="checkPoints"
+                    android:textSize="@dimen/medium"
+                    android:background="@color/colorPrimary"
+                    android:textColor="@color/white"
+                    android:text="!"/>
 
         </GridLayout>
 

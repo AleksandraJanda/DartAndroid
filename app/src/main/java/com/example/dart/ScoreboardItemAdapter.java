@@ -10,6 +10,7 @@ import android.widget.CheckBox;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class ScoreboardItemAdapter extends ArrayAdapter<User> implements View.OnClickListener{
     private ArrayList<User> dataSet;
@@ -20,6 +21,7 @@ public class ScoreboardItemAdapter extends ArrayAdapter<User> implements View.On
         TextView txtSets;
         TextView txtLegs;
         TextView txtScore;
+        TextView txtAverage;
 
     }
 
@@ -49,6 +51,7 @@ public class ScoreboardItemAdapter extends ArrayAdapter<User> implements View.On
             viewHolder.txtSets = convertView.findViewById(R.id.playerSets);
             viewHolder.txtLegs = convertView.findViewById(R.id.playerLegs);
             viewHolder.txtScore = convertView.findViewById(R.id.playerScore);
+            viewHolder.txtAverage = convertView.findViewById(R.id.playerAverage);
             convertView.setTag(viewHolder);
         } else {
             viewHolder = (ViewHolder) convertView.getTag();
@@ -58,6 +61,8 @@ public class ScoreboardItemAdapter extends ArrayAdapter<User> implements View.On
         viewHolder.txtSets.setText(String.valueOf(user.getSets()));
         viewHolder.txtLegs.setText(String.valueOf(user.getLegs()));
         viewHolder.txtScore.setText(String.valueOf(user.getScore()));
+        double avgPoints = averagePoints(user.getAvgList());
+        viewHolder.txtAverage.setText(String.format("%.2f", avgPoints));
         viewHolder.txtName.setBackgroundColor(Color.TRANSPARENT);
 
         if(user.isSelected()) {
@@ -65,5 +70,16 @@ public class ScoreboardItemAdapter extends ArrayAdapter<User> implements View.On
         }
 
         return convertView;
+    }
+
+    private static double averagePoints(List<Integer> list) {
+        double result = 0;
+        if(list.size()>0) {
+            for(int i: list) {
+                result += i;
+            }
+            result = result / list.size();
+        }
+        return result;
     }
 }

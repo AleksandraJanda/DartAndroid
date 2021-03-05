@@ -7,7 +7,7 @@ import android.os.Bundle;
 
 public class SettingsActivity extends AppCompatActivity {
 
-    EditText maxSets, maxScore;
+    EditText maxSets, maxScore, maxLegs;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -15,11 +15,13 @@ public class SettingsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_settings);
         maxScore = findViewById(R.id.maxScore);
         maxSets = findViewById(R.id.maxSets);
+        maxLegs = findViewById(R.id.maxLegs);
     }
 
     public void changeSettings(View view) {
         MainActivity.maxSets = Integer.parseInt(maxSets.getText().toString());
         MainActivity.maxScore = Integer.parseInt(maxScore.getText().toString());
+        MainActivity.maxLegs = Integer.parseInt(maxLegs.getText().toString());
         finish();
     }
 

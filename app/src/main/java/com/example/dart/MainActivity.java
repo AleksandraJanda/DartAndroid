@@ -2,9 +2,7 @@ package com.example.dart;
 
 import android.content.Intent;
 import android.view.View;
-import android.widget.ArrayAdapter;
-import android.widget.EditText;
-import android.widget.ListView;
+import android.widget.*;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
@@ -15,34 +13,48 @@ public class MainActivity extends AppCompatActivity {
     static ArrayList<User> users = new ArrayList<>();
 
     static int maxSets = 3;
+    static int maxLegs = 3;
     static int maxScore = 501;
 
     EditText name;
     ListView currentPlayers;
+    Button resume;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         currentPlayers = findViewById(R.id.currentPlayersList);
-        users.add(new User("olinka"));
-        users.add(new User("marcin"));
+        resume = findViewById(R.id.resume);
         updateList(users);
     }
 
     public void onAdd(View view) {
         name = findViewById(R.id.newPlayer);
         if(!name.getText().toString().isEmpty()) {
-            users.add(new User(name.getText().toString(), 0, 0, maxScore));
+            users.add(new User(name.getText().toString(), 0, 0, maxScore, new ArrayList<Integer>()));
             updateList(users);
             name.setText("");
         }
     }
 
     public void onStart(View view) {
-        for(User u: users) {
-            u.setScore(maxScore);
+        if(users.size()>0) {
+            for (User u : users) {
+                u.setAvgList(new ArrayList<Integer>());
+                u.setSets(0);
+                u.setLegs(0);
+                u.setScore(maxScore);
+            }
+            resume.setVisibility(1);
+            Intent i = new Intent(view.getContext(), GameActivity.class);
+            startActivity(i);
+        } else {
+            Toast.makeText(getApplicationContext(),"Add user", Toast.LENGTH_LONG).show();
         }
+    }
+
+    public void onResume(View view) {
         Intent i = new Intent(view.getContext(), GameActivity.class);
         startActivity(i);
     }

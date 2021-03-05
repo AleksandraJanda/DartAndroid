@@ -64,9 +64,22 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_marginTop="@dimen/small"
-            android:text="START"
+            android:text="NEW GAME"
             android:textSize="@dimen/medium"
             android:onClick="onStart"
+            android:background="@color/colorAccent"/>
+
+    <Button
+            android:id="@+id/resume"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/start"
+            android:layout_alignBottom="@id/currentPlayersList"
+            android:layout_marginTop="@dimen/small"
+            android:text="RESUME"
+            android:textSize="@dimen/medium"
+            android:onClick="onResume"
+            android:visibility="invisible"
             android:background="@color/colorAccent"/>
 
     <Button

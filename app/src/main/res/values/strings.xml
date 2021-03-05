@@ -3,4 +3,5 @@
     <string name="equation">0</string>
     <string name="max_score">501</string>
     <string name="max_sets">3</string>
+    <string name="max_legs">3</string>
 </resources>

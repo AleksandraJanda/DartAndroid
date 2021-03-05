@@ -1,11 +1,15 @@
 package com.example.dart;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class User {
     String name;
     int sets = 0;
     int legs = 0;
     int score = MainActivity.maxScore;
     boolean selected = false;
+    List<Integer> avgList = new ArrayList<>();
 
     public User() {
     }
@@ -14,11 +18,12 @@ public class User {
         this.name = name;
     }
 
-    public User(String name, int sets, int legs, int score) {
+    public User(String name, int sets, int legs, int score, List<Integer> avgList) {
         this.name = name;
         this.sets = sets;
         this.legs = legs;
         this.score = score;
+        this.avgList = avgList;
     }
 
     public String getName() {
@@ -59,6 +64,14 @@ public class User {
 
     public void setSelected(boolean selected) {
         this.selected = selected;
+    }
+
+    public List<Integer> getAvgList() {
+        return avgList;
+    }
+
+    public void setAvgList(List<Integer> avgList) {
+        this.avgList = avgList;
     }
 
     @Override

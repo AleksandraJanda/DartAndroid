@@ -28,10 +28,30 @@
             android:text="@string/max_sets"/>
 
     <TextView
-            android:id="@+id/maxScoreText"
+            android:id="@+id/maxLegsText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/maxSets"
+            android:textSize="@dimen/large"
+            android:layout_marginVertical="@dimen/small"
+            android:text="Maximum Legs:"/>
+
+    <EditText
+            android:id="@+id/maxLegs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/maxLegsText"
+            android:textSize="@dimen/large"
+            android:textAlignment="center"
+            android:inputType="number"
+            android:layout_marginVertical="@dimen/small"
+            android:text="@string/max_legs"/>
+
+    <TextView
+            android:id="@+id/maxScoreText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/maxLegs"
             android:textSize="@dimen/large"
             android:layout_marginVertical="@dimen/small"
             android:text="Maximum Score:"/>
